@@ -11,4 +11,27 @@ public class Book {
     private String authourNameOfBook;
     private long ISBNNumberOfBook;
 
+    public long getISBNNumberOfBook() {
+        return ISBNNumberOfBook;
+    }
+
+    public void setISBNNumberOfBook(long ISBNNumberOfBook) {
+        this.ISBNNumberOfBook = ISBNNumberOfBook;
+    }
+
+    public String getAuthourNameOfBook() {
+        return authourNameOfBook;
+    }
+
+    public void setAuthourNameOfBook(String authourNameOfBook) {
+        this.authourNameOfBook = authourNameOfBook;
+    }
+
+    public String getBookName() {
+        return bookName;
+    }
+
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
+    }
 }
