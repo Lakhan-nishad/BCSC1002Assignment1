@@ -34,4 +34,10 @@ public class Book {
     public void setBookName(String bookName) {
         this.bookName = bookName;
     }
+
+    public Book(String bookName, String authourNameOfBook, long ISBNNumberOfBook) {
+        this.bookName = bookName;
+        this.authourNameOfBook = authourNameOfBook;
+        this.ISBNNumberOfBook = ISBNNumberOfBook;
+    }
 }
