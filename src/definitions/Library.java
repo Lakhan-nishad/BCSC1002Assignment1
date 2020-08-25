@@ -8,4 +8,8 @@ package definitions;
 
 public class Library {
     public Book[] store;
+
+    public Library(Book[] store) {
+        this.store = store;
+    }
 }
