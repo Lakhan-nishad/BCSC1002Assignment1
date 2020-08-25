@@ -1,5 +1,5 @@
 /*  Created by IntelliJ IDEA.
- *  User: Divyansh Bhardwaj (dbc2201)
+ *  User: Lakhan
  *  Date: 21/08/20
  *  Time: 3:50 PM
  *  File Name : Library.java
@@ -10,6 +10,14 @@ public class Library {
     public Book[] store;
 
     public Library(Book[] store) {
+        this.store = store;
+    }
+
+    public Book[] getStore() {
+        return store;
+    }
+
+    public void setStore(Book[] store) {
         this.store = store;
     }
 }
