@@ -6,6 +6,7 @@
  * */
 package execution;
 
+import definitions.Library;
 import definitions.Student;
 
 import java.util.Scanner;
@@ -15,10 +16,12 @@ public class FrontDesk {
     private static final int ISSUE_BOOK = 1;
     private static final int RETURN_BOOK = 2;
     private static final int SHOW_ALL_ISSUES_BOOK = 3;
-    private static final int EXIT = 4;
+    private static final int INVENTORY_LIST = 4;
+    private static final int EXIT = 5;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Library library = new Library();
         int clientInput;
         Student student = new Student();
         do {
@@ -27,7 +30,8 @@ public class FrontDesk {
             System.out.println("1. Issue a new book for me.");
             System.out.println("2. Return a previously issues book for me.");
             System.out.println("3. Show me all my issues books.");
-            System.out.println("4. Exit.");
+            System.out.println("4. Show me list inventory.");
+            System.out.println("5. Exit.");
             System.out.print("Enter Your Choice (1 to 4): ");
             clientInput = scanner.nextInt();
             switch (clientInput) {
@@ -41,6 +45,12 @@ public class FrontDesk {
                     break;
                 case RETURN_BOOK:
                     student.doReturn();
+                    break;
+                case INVENTORY_LIST:
+                    library.listInventory();
+                    System.out.println("---Press ENTER button for go to FrontDesk.--- ");
+                    scanner.nextLine();
+                    scanner.nextLine();
                     break;
                 case EXIT:
                     System.out.println("EXIT!");
