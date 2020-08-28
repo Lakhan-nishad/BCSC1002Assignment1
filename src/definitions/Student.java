@@ -11,10 +11,9 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class Student {
-    Library library = new Library();
+    Scanner scanner = new Scanner(System.in);
     private String studentName;
     private long universityRollNumber;
-    Scanner scanner = new Scanner(System.in);
     private Book[] nameOfBooks;
     private int numberOfBookIssued = 0;
 
@@ -25,6 +24,10 @@ public class Student {
         this.nameOfBooks = nameOfBooks;
     }
 
+    public Student() {
+        this.nameOfBooks = new Book[5];
+    }
+
     public Book[] getNameOfBooks() {
         return nameOfBooks;
     }
@@ -33,15 +36,18 @@ public class Student {
         this.nameOfBooks = nameOfBooks;
     }
 
-    public Student() {
-        this.nameOfBooks = new Book[5];
-    }
-
     /**
      * This method helps us to issue the book.
      */
 
     public void doIssue() {
+        if (numberOfBookIssued == 0) {
+            System.out.print("Please enter your name: ");
+            studentName = scanner.nextLine();
+            System.out.print("enter your university number : ");
+            universityRollNumber = scanner.nextInt();
+            scanner.nextLine();
+        }
         System.out.print("enter book name: ");
         String bookName = scanner.nextLine();
         System.out.print("enter the author name of the book: ");
@@ -68,19 +74,12 @@ public class Student {
     }
 
     /**
-     * This method shows a list of all the book in our inventory.
-     */
-    public void listInventory() {
-        for (Book book : library.store) {
-            System.out.println(book);
-        }
-    }
-
-    /**
      * This method show a list of all the issued book.
      */
 
     public void showIssuesBook() {
+        System.out.println("Student name: " + studentName);
+        System.out.println("University roll no.: " + universityRollNumber);
         for (int i = 0; i < numberOfBookIssued; i++) {
             System.out.println(nameOfBooks[i]);
         }

@@ -30,6 +30,16 @@ public class Library {
         this.store = store;
     }
 
+    /**
+     * This method shows a list of all the book in our inventory.
+     */
+
+    public void listInventory() {
+        for (Book book : store) {
+            System.out.println(book);
+        }
+    }
+
     @Override
     public String toString() {
         return "Library{" +
