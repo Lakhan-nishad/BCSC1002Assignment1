@@ -43,9 +43,15 @@ public class FrontDesk {
                     if (student.getNumberOfBookIssued() == 0) {
                         System.out.println("no any book issued!");
                     }
+                    System.out.println("Press ENTER button for go to FrontDesk. ");
+                    scanner.nextLine();
+                    scanner.nextLine();
                     break;
                 case RETURN_BOOK:
                     student.doReturn();
+                    break;
+                case EXIT:
+                    System.out.println("EXIT!");
                     break;
                 default:
                     System.out.println("WRONG CHOICE.");

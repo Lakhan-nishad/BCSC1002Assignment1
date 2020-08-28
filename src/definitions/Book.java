@@ -10,7 +10,7 @@ import java.util.Objects;
 
 public class Book {
     private String bookName;
-    private String authourNameOfBook;
+    private String authorNameOfBook;
     private long ISBNNumberOfBook;
 
     public long getISBNNumberOfBook() {
@@ -21,12 +21,14 @@ public class Book {
         this.ISBNNumberOfBook = ISBNNumberOfBook;
     }
 
-    public String getAuthourNameOfBook() {
-        return authourNameOfBook;
+    public Book(String bookName, String authorNameOfBook, long ISBNNumberOfBook) {
+        this.bookName = bookName;
+        this.authorNameOfBook = authorNameOfBook;
+        this.ISBNNumberOfBook = ISBNNumberOfBook;
     }
 
-    public void setAuthourNameOfBook(String authourNameOfBook) {
-        this.authourNameOfBook = authourNameOfBook;
+    public String getAuthorNameOfBook() {
+        return authorNameOfBook;
     }
 
     public String getBookName() {
@@ -37,17 +39,15 @@ public class Book {
         this.bookName = bookName;
     }
 
-    public Book(String bookName, String authourNameOfBook, long ISBNNumberOfBook) {
-        this.bookName = bookName;
-        this.authourNameOfBook = authourNameOfBook;
-        this.ISBNNumberOfBook = ISBNNumberOfBook;
+    public void setAuthorNameOfBook(String authorNameOfBook) {
+        this.authorNameOfBook = authorNameOfBook;
     }
 
     @Override
     public String toString() {
         return "Book{" +
                 "bookName='" + bookName + '\'' +
-                ", authourNameOfBook='" + authourNameOfBook + '\'' +
+                ", authorNameOfBook='" + authorNameOfBook + '\'' +
                 ", ISBNNumberOfBook=" + ISBNNumberOfBook +
                 '}';
     }
@@ -59,11 +59,11 @@ public class Book {
         Book book = (Book) o;
         return getISBNNumberOfBook() == book.getISBNNumberOfBook() &&
                 Objects.equals(getBookName(), book.getBookName()) &&
-                Objects.equals(getAuthourNameOfBook(), book.getAuthourNameOfBook());
+                Objects.equals(getAuthorNameOfBook(), book.getAuthorNameOfBook());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getBookName(), getAuthourNameOfBook(), getISBNNumberOfBook());
+        return Objects.hash(getBookName(), getAuthorNameOfBook(), getISBNNumberOfBook());
     }
 }

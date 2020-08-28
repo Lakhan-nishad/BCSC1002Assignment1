@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class Student {
+    Library library = new Library();
     private String studentName;
     private long universityRollNumber;
     Scanner scanner = new Scanner(System.in);
@@ -50,8 +51,11 @@ public class Student {
         String authorName = scanner.nextLine();
         System.out.print("enter the ISBN number of book which write on the book: ");
         long ISBNNumber = scanner.nextInt();
+        scanner.nextLine();
         nameOfBooks[getNumberOfBookIssued()] = new Book(bookName, authorName, ISBNNumber);
-        System.out.println(bookName + " " + "issued!");
+        System.out.println(bookName + " " + "book issued!");
+        System.out.println("Press ENTER button for go to FrontDesk. ");
+        scanner.nextLine();
     }
 
     /**
@@ -59,10 +63,21 @@ public class Student {
      */
 
     public void doReturn() {
-        scanner.nextLine();
+        //scanner.nextLine();
         numberOfBookIssued = 0;
         this.nameOfBooks = new Book[5];
         System.out.println("Book returned successfully!");
+        System.out.println("Press ENTER button for go to FrontDesk. ");
+        scanner.nextLine();
+    }
+
+    /**
+     * This method shows a list of all the videos in our inventory.
+     */
+    public void listInventory() {
+        for (Book book : library.store) {
+            System.out.println(book);
+        }
     }
 
     public long getUniversityRollNumber() {
