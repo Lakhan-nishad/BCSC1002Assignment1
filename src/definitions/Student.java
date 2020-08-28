@@ -66,9 +66,13 @@ public class Student {
      */
 
     public void doReturn() {
-        numberOfBookIssued = 0;
-        this.nameOfBooks = new Book[5];
-        System.out.println("Book returned successfully!");
+        if (numberOfBookIssued == 0) {
+            System.out.println("No book available for return. ");
+        } else {
+            numberOfBookIssued = 0;
+            this.nameOfBooks = new Book[5];
+            System.out.println("Book returned successfully!");
+        }
         System.out.println("---Press ENTER button for go to FrontDesk.--- ");
         scanner.nextLine();
     }

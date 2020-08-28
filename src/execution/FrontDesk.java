@@ -32,7 +32,7 @@ public class FrontDesk {
             System.out.println("3. Show me all my issues books.");
             System.out.println("4. Show me list inventory.");
             System.out.println("5. Exit.");
-            System.out.print("Enter Your Choice (1 to 4): ");
+            System.out.print("Enter Your Choice (1 to 5): ");
             clientInput = scanner.nextInt();
             switch (clientInput) {
                 case ISSUE_BOOK:
