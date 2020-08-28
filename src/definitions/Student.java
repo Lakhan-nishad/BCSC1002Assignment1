@@ -43,9 +43,6 @@ public class Student {
 
     public void doIssue() {
         System.out.print("enter book name: ");
-        if (getNumberOfBookIssued() != 0) {
-            scanner.nextLine();
-        }
         String bookName = scanner.nextLine();
         System.out.print("enter the author name of the book: ");
         String authorName = scanner.nextLine();
@@ -54,7 +51,7 @@ public class Student {
         scanner.nextLine();
         nameOfBooks[getNumberOfBookIssued()] = new Book(bookName, authorName, ISBNNumber);
         System.out.println(bookName + " " + "book issued!");
-        System.out.println("Press ENTER button for go to FrontDesk. ");
+        System.out.println("---Press ENTER button for go to FrontDesk.--- ");
         scanner.nextLine();
     }
 
@@ -63,21 +60,35 @@ public class Student {
      */
 
     public void doReturn() {
-        //scanner.nextLine();
         numberOfBookIssued = 0;
         this.nameOfBooks = new Book[5];
         System.out.println("Book returned successfully!");
-        System.out.println("Press ENTER button for go to FrontDesk. ");
+        System.out.println("---Press ENTER button for go to FrontDesk.--- ");
         scanner.nextLine();
     }
 
     /**
-     * This method shows a list of all the videos in our inventory.
+     * This method shows a list of all the book in our inventory.
      */
     public void listInventory() {
         for (Book book : library.store) {
             System.out.println(book);
         }
+    }
+
+    /**
+     * This method show a list of all the issued book.
+     */
+
+    public void showIssuesBook() {
+        for (int i = 0; i < numberOfBookIssued; i++) {
+            System.out.println(nameOfBooks[i]);
+        }
+        if (numberOfBookIssued == 0) {
+            System.out.println("no any book issued!");
+        }
+        System.out.println("---Press ENTER button for go to FrontDesk.--- ");
+        scanner.nextLine();
     }
 
     public long getUniversityRollNumber() {

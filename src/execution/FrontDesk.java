@@ -37,15 +37,7 @@ public class FrontDesk {
                     student.setNumberOfBookIssued();
                     break;
                 case SHOW_ALL_ISSUES_BOOK:
-                    for (int i = 0; i < student.getNumberOfBookIssued(); i++) {
-                        System.out.println(student.getNameOfBooks()[i]);
-                    }
-                    if (student.getNumberOfBookIssued() == 0) {
-                        System.out.println("no any book issued!");
-                    }
-                    System.out.println("Press ENTER button for go to FrontDesk. ");
-                    scanner.nextLine();
-                    scanner.nextLine();
+                    student.showIssuesBook();
                     break;
                 case RETURN_BOOK:
                     student.doReturn();
